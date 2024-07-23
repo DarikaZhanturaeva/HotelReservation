@@ -3,16 +3,85 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/hotelBookingFragment2">
+    app:startDestination="@id/hotelsFragment">
 
     <fragment
-        android:id="@+id/hotelBookingFragment2"
-        android:name="com.example.hotelreservation.ui.fragment.HotelBookingFragment"
-        android:label="fragment_hotel_booking"
-        tools:layout="@layout/fragment_hotel_booking" />
-    <fragment
-        android:id="@+id/hotelsFragment2"
-        android:name="com.example.hotelreservation.ui.fragment.HotelsFragment"
+        android:id="@+id/hotelsFragment"
+        android:name="com.example.hotelreservation.ui.fragment.all_hotels.HotelsFragment"
         android:label="fragment_hotels"
-        tools:layout="@layout/fragment_hotels" />
+        tools:layout="@layout/fragment_hotels">
+        <action
+            android:id="@+id/action_hotelsFragment_to_bookingDetailFragment"
+            app:destination="@id/bookingDetailFragment">
+            <argument
+                android:name="hotelId"
+                app:argType="integer" />
+            <argument
+                android:name="hotelName"
+                app:argType="string" />
+            <argument
+                android:name="hotelImage"
+                app:argType="string" />
+            <argument
+                android:name="hotelAddress"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/hotelBookingFragment"
+        android:name="com.example.hotelreservation.ui.fragment.booked.HotelBookingFragment"
+        android:label="fragment_hotel_booking"
+        tools:layout="@layout/fragment_hotel_booking">
+
+        <argument
+            android:name="hotelId"
+            app:argType="integer" />
+        <argument
+            android:name="hotelName"
+            app:argType="string" />
+        <argument
+            android:name="hotelImage"
+            app:argType="string" />
+        <argument
+            android:name="hotelAddress"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_hotelBookingFragment_to_bookingDetailFragment"
+            app:destination="@id/bookingDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/bookingDetailFragment"
+        android:name="com.example.hotelreservation.ui.fragment.hotel_detail.BookingDetailFragment"
+        android:label="fragment_booking_detail"
+        tools:layout="@layout/fragment_booking_detail">
+        <argument
+            android:name="hotelId"
+            app:argType="integer" />
+        <argument
+            android:name="hotelName"
+            app:argType="string" />
+        <argument
+            android:name="hotelImage"
+            app:argType="string" />
+        <argument
+            android:name="hotelAddress"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_bookingDetailFragment_to_hotelBookingFragment"
+            app:destination="@id/hotelBookingFragment">
+            <argument
+                android:name="hotelId"
+                app:argType="integer" />
+            <argument
+                android:name="hotelName"
+                app:argType="string" />
+            <argument
+                android:name="hotelImage"
+                app:argType="string" />
+            <argument
+                android:name="hotelAddress"
+                app:argType="string" />
+        </action>
+    </fragment>
 </navigation>

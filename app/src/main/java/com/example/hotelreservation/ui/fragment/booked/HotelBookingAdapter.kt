@@ -1,33 +1,41 @@
-package com.example.hotelreservation.ui.fragment
+package com.example.hotelreservation.ui.fragment.booked
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hotelreservation.OnItemClick
 import com.example.hotelreservation.data.local.entity.HotelModel
+import com.example.hotelreservation.databinding.ItemBookingBinding
 import com.example.hotelreservation.databinding.ItemHotelBinding
+import com.example.hotelreservation.loadImage
 
-class HotelAdapter(private val dataList: List<HotelModel>) :
-    ListAdapter<HotelModel, HotelAdapter.ViewHolder>(DiffCallback()) {
+class HotelBookingAdapter( private val onClick: OnItemClick) :
+    ListAdapter<HotelModel, HotelBookingAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemHotelBinding.inflate(inflater, parent, false)
+        val binding = ItemBookingBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataList[position])
         val item = getItem(position)
         holder.bind(item)
+        holder.itemView.setOnClickListener {
+            onClick.onClick(item)
+        }
     }
 
 
-    class ViewHolder(private val binding: ItemHotelBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemBookingBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(hotelModel: HotelModel) {
             binding.apply {
                 tvName.text = hotelModel.name
+                imgHotel.loadImage(hotelModel.image)
+                tvAdress.text = hotelModel.address
+                binding.quantityRoom.text = hotelModel.rooms.toString()
             }
         }
     }

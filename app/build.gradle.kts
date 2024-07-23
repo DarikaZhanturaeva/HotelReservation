@@ -65,6 +65,12 @@ dependencies {
     //Koin
     implementation(libs.koin.android)
 
+
+    //Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+
+
     //notification
     implementation (libs.androidx.work.runtime.ktx)
 }

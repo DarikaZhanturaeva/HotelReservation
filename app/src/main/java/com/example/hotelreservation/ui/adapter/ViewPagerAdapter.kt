@@ -2,8 +2,8 @@ package com.example.hotelreservation.ui.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.hotelreservation.ui.fragment.HotelBookingFragment
-import com.example.hotelreservation.ui.fragment.HotelsFragment
+import com.example.hotelreservation.ui.fragment.booked.HotelBookingFragment
+import com.example.hotelreservation.ui.fragment.all_hotels.HotelsFragment
 
 
 class ViewPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {

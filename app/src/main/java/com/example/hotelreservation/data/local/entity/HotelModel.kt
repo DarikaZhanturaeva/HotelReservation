@@ -4,9 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "hotels")
-data class HotelModel (
+data class HotelModel(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String,
-    val image: String
+    val image: String,
+    val address: String,
+    var rooms: Int = 0
 )

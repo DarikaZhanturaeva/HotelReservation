@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/hotelsFragment"
-        android:title="Hotels"/>
+        android:title="Hotels"
+        android:icon="@drawable/ic_star"/>
     <item android:id="@+id/hotelBookingFragment"
-        android:icon="@android:drawable/ic_menu_view"
-        android:title="Profile"/>
+        android:title="booking"
+        android:icon="@drawable/location_icon"/>
 
 </menu>
