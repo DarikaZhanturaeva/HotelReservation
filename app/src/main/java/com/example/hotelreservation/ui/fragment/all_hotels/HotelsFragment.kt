@@ -21,7 +21,7 @@ class HotelsFragment : BaseFragment<FragmentHotelsBinding>(FragmentHotelsBinding
     override fun setupObservers() {
         super.setupObservers()
         viewModel.getAllHotels().observe(viewLifecycleOwner, Observer { hotels ->
-                Log.d("HotelsFragment", "Number of hotels: ${hotels.size}")
+                Log.d("HotelsFragment", "Number of hotels: ${hotels}")
                 hotelAdapter.submitList(hotels)
         })
     }
@@ -97,7 +97,6 @@ class HotelsFragment : BaseFragment<FragmentHotelsBinding>(FragmentHotelsBinding
             Log.d("HotelsFragment", "Inserting hotel: ${it.name}")
             viewModel.insertHotel(it)
         }
-        hotelAdapter.submitList(hotels)
         binding.rvHotels.adapter = hotelAdapter
     }
 

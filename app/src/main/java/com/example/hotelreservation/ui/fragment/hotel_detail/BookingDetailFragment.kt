@@ -5,6 +5,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.hotelreservation.databinding.FragmentBookingDetailBinding
 import com.example.hotelreservation.ui.base.BaseFragment
 import androidx.navigation.fragment.navArgs
+import com.example.hotelreservation.R
 import com.example.hotelreservation.data.local.entity.HotelModel
 import com.example.hotelreservation.ext.loadImage
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -61,7 +62,7 @@ class BookingDetailFragment :
             viewModel.getHotelById(args.hotelId).observe(viewLifecycleOwner, Observer { hotel ->
                 hotel?.let {
                     viewModel.deleteHotel(it)
-                    findNavController().navigateUp()
+                    findNavController().navigate(R.id.hotelsFragment)
                 }
             })
         }

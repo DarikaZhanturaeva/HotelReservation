@@ -16,7 +16,7 @@ class HotelRepository(
 
     suspend fun insertHotel(hotel: HotelModel) = withContext(Dispatchers.IO) {
         Log.d("HotelRepository", "Inserting hotel: ${hotel.name}")
-        hotelDao.updateHotel(hotel)
+        hotelDao.insertHotel(hotel)
     }
 
     suspend fun updateHotel(hotel: HotelModel) {
