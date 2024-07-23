@@ -3,16 +3,11 @@ package com.example.hotelreservation.ui.fragment.all_hotels
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.example.hotelreservation.OnItemClick
-import com.example.hotelreservation.R
+import com.example.hotelreservation.ui.interfaces.OnItemClick
 import com.example.hotelreservation.data.local.entity.HotelModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.hotelreservation.databinding.FragmentHotelsBinding
 import com.example.hotelreservation.ui.base.BaseFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class HotelsFragment : BaseFragment<FragmentHotelsBinding>(FragmentHotelsBinding::inflate),
     OnItemClick {

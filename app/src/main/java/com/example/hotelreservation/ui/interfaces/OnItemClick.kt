@@ -1,4 +1,4 @@
-package com.example.hotelreservation
+package com.example.hotelreservation.ui.interfaces
 
 import com.example.hotelreservation.data.local.entity.HotelModel
 

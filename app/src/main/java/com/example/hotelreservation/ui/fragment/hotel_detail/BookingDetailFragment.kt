@@ -6,7 +6,7 @@ import com.example.hotelreservation.databinding.FragmentBookingDetailBinding
 import com.example.hotelreservation.ui.base.BaseFragment
 import androidx.navigation.fragment.navArgs
 import com.example.hotelreservation.data.local.entity.HotelModel
-import com.example.hotelreservation.loadImage
+import com.example.hotelreservation.ext.loadImage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.hotelreservation.ui.fragment.booked.HotelBookingViewModel
 

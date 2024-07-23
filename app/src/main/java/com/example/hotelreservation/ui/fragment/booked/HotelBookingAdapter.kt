@@ -5,11 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotelreservation.OnItemClick
+import com.example.hotelreservation.ui.interfaces.OnItemClick
 import com.example.hotelreservation.data.local.entity.HotelModel
 import com.example.hotelreservation.databinding.ItemBookingBinding
-import com.example.hotelreservation.databinding.ItemHotelBinding
-import com.example.hotelreservation.loadImage
+import com.example.hotelreservation.ext.loadImage
 
 class HotelBookingAdapter( private val onClick: OnItemClick) :
     ListAdapter<HotelModel, HotelBookingAdapter.ViewHolder>(DiffCallback()) {

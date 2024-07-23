@@ -3,7 +3,7 @@ package com.example.hotelreservation.ui.fragment.booked
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
-import com.example.hotelreservation.OnItemClick
+import com.example.hotelreservation.ui.interfaces.OnItemClick
 import com.example.hotelreservation.data.local.entity.HotelModel
 import com.example.hotelreservation.databinding.FragmentHotelBookingBinding
 import com.example.hotelreservation.ui.base.BaseFragment

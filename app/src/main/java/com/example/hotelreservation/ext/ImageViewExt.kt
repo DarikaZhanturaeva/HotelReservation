@@ -1,4 +1,4 @@
-package com.example.hotelreservation
+package com.example.hotelreservation.ext
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
